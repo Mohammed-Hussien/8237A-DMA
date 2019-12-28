@@ -12,6 +12,13 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.5c Compiler 2017.01 Jan 2
 Top level modules:
 	fifo
 
+} {} {}} F:/DMA/Transfer_Modes.v {1 {vlog -work work -stats=none F:/DMA/Transfer_Modes.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5c Compiler 2017.01 Jan 23 2017
+-- Compiling module transferMode
+
+Top level modules:
+	transferMode
+
 } {} {}} F:/DMA/Channels_Priority_1.v {1 {vlog -work work -stats=none F:/DMA/Channels_Priority_1.v
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5c Compiler 2017.01 Jan 23 2017
 -- Compiling module holdRequest
@@ -20,6 +27,13 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.5c Compiler 2017.01 Jan 2
 Top level modules:
 	holdRequest
 	channels_priority
+
+} {} {}} F:/DMA/convert8to16Buffer.v {1 {vlog -work work -stats=none F:/DMA/convert8to16Buffer.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5c Compiler 2017.01 Jan 23 2017
+-- Compiling module writeBuffer
+
+Top level modules:
+	writeBuffer
 
 } {} {}} F:/DMA/DMA.v {1 {vlog -work work -stats=none F:/DMA/DMA.v
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5c Compiler 2017.01 Jan 23 2017

@@ -61,20 +61,21 @@ endmodule
 
 //////////////////////////////////////////////////////////////////////////////////////////////////
 
-module BaseAddress_and_BaseCount(TC,register_selector,clk,baseAddress_register,baseCount_register,data_bus,finish_converting);
+module BaseAddress_and_BaseCount(TC,register_selector,clk,baseAddress_register,destination_register,baseCount_register,data_bus,finish_converting);
 input [7:0]data_bus;
 input [11:0]register_selector;
 input clk,TC;
-output reg[15:0]baseAddress_register,baseCount_register;
-integer flag,flag2;			//this flag waits until the write buffer prepare the data
+output reg[15:0]baseAddress_register,destination_register,baseCount_register;
+integer flag,flag2,flag3;			//this flag waits until the write buffer prepare the data
 input finish_converting;
 initial
 begin
 flag=0;
 flag2=0;
+flag3=0;
 end
-always@(posedge TC)begin flag=0;flag2=0; end
-always@(data_bus or register_selector or flag or flag2) //maynf34 @register_selector
+always@(posedge TC)begin flag=0; flag2=0; flag3=0; end
+always@(data_bus or register_selector or flag or flag2 or flag3 or posedge clk) //maynf34 @register_selector
 begin
 if(register_selector==12'h000 && flag<2)
 begin
@@ -87,24 +88,33 @@ begin
 if(flag2==0)begin baseCount_register[7:0]=data_bus;flag2=1;end
 else if(flag2==1)begin baseCount_register[15:8]=data_bus;flag2=2;end
 end
+
+if(register_selector==12'h002 && flag3<2)
+begin
+if(flag3==0)begin destination_register[7:0]=data_bus;flag3=1;end
+else if(flag3==1)begin destination_register[15:8]=data_bus;flag3=2;end
+end
+
 end
 endmodule
 
 //////////////////////////////////////////////////////////////////////////////////////////////////
 
-module current_address(mode_register,register_selector,TC,current_address,current_word,baseAddress_register,baseCount_register,clk,DACK0,DACK1,DACK2,DACK3,EOP);
-input [15:0]baseAddress_register,baseCount_register;
+module current_address(mode_register,register_selector,TC,current_address,current_address_destination,current_word,baseAddress_register,destination_register,baseCount_register,clk,DACK0,DACK1,DACK2,DACK3,EOP);
+input [15:0]baseAddress_register,baseCount_register,destination_register;
 input clk,DACK0,DACK1,DACK2,DACK3;
 input [7:0]mode_register;
 input [11:0]register_selector;
-output reg [15:0]current_address,current_word;
+output reg [15:0]current_address,current_word,current_address_destination;
 output reg TC,EOP;
-initial begin TC=0; EOP=0;end
+integer flag;
+initial begin TC=0; EOP=0; flag=0; end
 always @(baseAddress_register,baseCount_register)
 begin 
-if(mode_register[5]==0)current_address=baseAddress_register;//INCREMENTING ADDRESS MODE
-else if(mode_register[5]==1)current_address=baseAddress_register;//DECREMENTING ADDRESS MODE
+current_address=baseAddress_register;
+current_address_destination=destination_register;
 current_word=baseCount_register;
+flag=0;
 TC=0;
 end
 always @(posedge clk)
@@ -112,15 +122,30 @@ begin
 if(DACK0 || DACK1 || DACK2 || DACK3)
 begin
 //INCREMENTING ADDRESS MODE
-if((current_address<=baseAddress_register+baseCount_register-1)&&(mode_register[5]==0))
+if((current_address<=baseAddress_register+baseCount_register)&&(mode_register[5]==0))
 begin
+if(mode_register[3]== 0 && mode_register[2]== 0)
+begin
+if(flag==4)
+begin 
 current_address= current_address+1;
-current_word=current_word-1;
+current_address_destination=current_address_destination+1;
+current_word=current_word-1; 
+end
+flag=flag+1; 
+end
+else 
+begin 
+current_address= current_address+1;
+current_address_destination=current_address_destination+1;
+current_word=current_word-1; 
+end
 end
 //DECREMENTING ADDRESS MODE
-else if((current_address=>baseAddress_register-baseCount_register+1)&&(mode_register[5]==1))
+else if((current_address>=baseAddress_register-baseCount_register+1)&&(mode_register[5]==1))
 begin
 current_address= current_address-1;
+current_address_destination=current_address_destination-1;
 current_word=current_word-1;
 end
 //END OF COUNTING

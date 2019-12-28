@@ -9,7 +9,7 @@ z2
 cModel Technology
 dC:/intelFPGA_pro/17.1
 vA0A3Decoder
-Z0 !s110 1577230759
+Z0 !s110 1577477199
 !i10b 1
 !s100 iPW6lQ<;L<[IjJjMI[Io[2
 IRINm3>gG2BOLNoGeHo6TS2
@@ -23,7 +23,7 @@ Z3 OV;L;10.5c;63
 r1
 !s85 0
 31
-Z4 !s108 1577230759.000000
+Z4 !s108 1577477199.000000
 !s107 F:/DMA/A0A3Decoder.v|
 !s90 -reportprogress|300|-work|work|-stats=none|F:/DMA/A0A3Decoder.v|
 !i113 1
@@ -33,11 +33,11 @@ n@a0@a3@decoder
 vBaseAddress_and_BaseCount
 R0
 !i10b 1
-!s100 iUFd_eDTfVbQThSTnzIiB3
-I]blRVem9[gT@0=RMMl?LA0
+!s100 zXhi8<i`WVTUMKkOdV=WZ1
+I5`^9UUlJfinGIX@Xg63<d3
 R1
 R2
-Z7 w1577230581
+Z7 w1577477166
 Z8 8F:/DMA/COMMAND_Register.v
 Z9 FF:/DMA/COMMAND_Register.v
 L0 64
@@ -98,14 +98,14 @@ n@c@o@m@m@a@n@d_register
 vcurrent_address
 R0
 !i10b 1
-!s100 `aM9=GXn=aeIciKF^DoGg3
-I_M@50=_T<>j1@cjQ^FhJZ1
+!s100 L[of_k1LN;6;WZ8GcZ3IT3
+Ib?[o:b]`UaRzodC>KJ?II1
 R1
 R2
 R7
 R8
 R9
-L0 95
+L0 103
 R3
 r1
 !s85 0
@@ -117,13 +117,13 @@ R11
 R5
 R6
 vDMA
-Z17 !s110 1577230760
+Z17 !s110 1577477200
 !i10b 1
-!s100 DNC=WZ:cW:8372OUf9m:G1
-I]K6AYLzJ=LdImeGod8UDS2
+!s100 WjKH@U8BXB>dkA>`?Jka53
+I[6ZH_M50ib7GC`n?9Qe=a3
 R1
 R2
-Z18 w1577230755
+Z18 w1577476382
 Z19 8F:/DMA/DMA.v
 Z20 FF:/DMA/DMA.v
 L0 1
@@ -131,7 +131,7 @@ R3
 r1
 !s85 0
 31
-Z21 !s108 1577230760.000000
+Z21 !s108 1577477200.000000
 Z22 !s107 F:/DMA/DMA.v|
 Z23 !s90 -reportprogress|300|-work|work|-stats=none|F:/DMA/DMA.v|
 !i113 1
@@ -183,7 +183,7 @@ R5
 R6
 nel@joker
 vexternal
-Z24 !s110 1577230761
+R17
 !i10b 1
 !s100 2LJPd7WgEeNNC[C7M0A^42
 Ic>7zcZdcj;^A>M^Y^jaO[2
@@ -197,7 +197,7 @@ R3
 r1
 !s85 0
 31
-Z25 !s108 1577230761.000000
+R21
 !s107 F:/DMA/testatatt.v|
 !s90 -reportprogress|300|-work|work|-stats=none|F:/DMA/testatatt.v|
 !i113 1
@@ -211,16 +211,16 @@ IVEWi=lTA0F<4Y;Mf:@V@83
 R1
 R2
 w1577131124
-Z26 8F:/DMA/FIFO.v
-Z27 FF:/DMA/FIFO.v
+Z24 8F:/DMA/FIFO.v
+Z25 FF:/DMA/FIFO.v
 L0 1
 R3
 r1
 !s85 0
 31
 R21
-Z28 !s107 F:/DMA/FIFO.v|
-Z29 !s90 -reportprogress|300|-work|work|-stats=none|F:/DMA/FIFO.v|
+Z26 !s107 F:/DMA/FIFO.v|
+Z27 !s90 -reportprogress|300|-work|work|-stats=none|F:/DMA/FIFO.v|
 !i113 1
 R5
 R6
@@ -232,16 +232,16 @@ I]Fni[D]<<4U6EEO5cJBg_0
 R1
 R2
 w1576363272
-R26
-R27
+R24
+R25
 L0 1
 R3
 r1
 !s85 0
 31
 !s108 1576363275.000000
-R28
-R29
+R26
+R27
 !i113 1
 R5
 R6
@@ -314,14 +314,14 @@ n@m@a@s@k_register
 vMode_register
 R0
 !i10b 1
-!s100 FSOmK??S2i0DaM^9GQUM<2
-IED__ge4hld>Xj>EYmJnLN3
+!s100 1A_=DPkC7=K3TRA`[Cgb12
+IZUfYjC7e<0nT;UD8U8B?83
 R1
 R2
 R7
 R8
 R9
-L0 134
+L0 160
 R3
 r1
 !s85 0
@@ -358,14 +358,14 @@ n@r@e@q@u@e@s@t_register
 vSTATUS_register
 R0
 !i10b 1
-!s100 DiC0HMXcR973dBF6lN9O<3
-I^]OiAQgiA1oHP3QTfjPSo0
+!s100 9HT9o0`5[3RO=gz=:3ZPN1
+IZAUhO:Z]4a[;hBz2S8Ra<2
 R1
 R2
 R7
 R8
 R9
-L0 150
+L0 176
 R3
 r1
 !s85 0
@@ -385,16 +385,16 @@ IG1Wbd;V7dcb^_?@Jj^ZAn1
 R1
 R2
 w1576370082
-R26
-R27
+R24
+R25
 L0 50
 R3
 r1
 !s85 0
 31
 !s108 1576617873.000000
-R28
-R29
+R26
+R27
 !i113 1
 R5
 R6
@@ -420,7 +420,7 @@ r1
 R5
 R6
 vtestato
-R24
+Z28 !s110 1577477201
 !i10b 1
 !s100 a??DA6zOYKd^k;YMVGBfT0
 I9ZX@TVijUdjd68ioLgURE1
@@ -434,20 +434,20 @@ R3
 r1
 !s85 0
 31
-R25
+Z29 !s108 1577477201.000000
 !s107 F:/DMA/testato.v|
 !s90 -reportprogress|300|-work|work|-stats=none|F:/DMA/testato.v|
 !i113 1
 R5
 R6
 vtransferMode
-R24
+R28
 !i10b 1
-!s100 o0>ml>=n4Qk`UOOm3>6i@1
-IMPF8fgTU@jEA]4acMPWbR0
+!s100 3SJ8W8;l]l3RJ7lFc>V_80
+IWYo?YiJIMmkVk`:Gh2f>B0
 R1
 R2
-w1577226209
+w1577476386
 8F:/DMA/Transfer_Modes.v
 FF:/DMA/Transfer_Modes.v
 L0 1
@@ -455,7 +455,7 @@ R3
 r1
 !s85 0
 31
-R25
+R29
 !s107 F:/DMA/Transfer_Modes.v|
 !s90 -reportprogress|300|-work|work|-stats=none|F:/DMA/Transfer_Modes.v|
 !i113 1
@@ -463,13 +463,13 @@ R5
 R6
 ntransfer@mode
 vwriteBuffer
-R0
+R17
 !i10b 1
-!s100 N10KEl?mJD4Ji:9cF8Xol0
-I?1_`J>Lm]NBV2E46YNnhm1
+!s100 g[`]MFCJKAI9HoIIljYUZ1
+IJ<NKEJ[NMD2EDbMeMJS3e1
 R1
 R2
-w1577216226
+w1577233142
 8F:/DMA/convert8to16Buffer.v
 FF:/DMA/convert8to16Buffer.v
 L0 1
